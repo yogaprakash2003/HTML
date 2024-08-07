@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <style>
+        body {
+            background-color: #f0f8ff; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #86aa87;
+            color: white;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            color: #100000;
+        }
+        main {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; 
+        }
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+        input, select {
+            width: 1400px;
+            height: 30px;
+            margin-bottom: 15px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="date"] {
+            width: 1405px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Registration</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('event')">Event</a></li>
+                <li><a href="#" onclick="showPage('student')">Student</a></li>
+                <li><a href="#" onclick="showPage('overall')">Overall</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home">
+    </main>
+    <main id="event">
+        <h2>Event Page</h2>
+        <p>Here you can manage events.</p>
+    </main>
+    <main id="student">
+        <label for="register-number">Register number</label><br>
+        <input type="number" id="register-number" maxlength="12"><br>
+        
+        <label for="student-name">Student name</label><br>
+        <input type="text" id="student-name"><br>
+        
+        <label for="department">Department</label><br>
+        <input type="text" id="department"><br>
+        
+        <label for="year">Year</label><br>
+        <select id="year" name="year">
+            <option value="">Choose an option</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+        </select><br>
+        
+        <label for="event-name">Event Name</label><br>
+        <select id="event-name" name="event-name">
+            <option value="">Choose an option</option>
+            <option value="event1">Event 1</option>
+            <option value="event2">Event 2</option>
+            <option value="event3">Event 3</option>
+        </select><br>
+        
+        <label for="event-type">Event Type</label><br>
+        <select id="event-type" name="event-type">
+            <option value="">Choose an option</option>
+            <option value="type1">Type 1</option>
+            <option value="type2">Type 2</option>
+            <option value="type3">Type 3</option>
+        </select><br>
+        
+        <label for="event-date">Event Date</label><br>
+        <input type="date" id="event-date" name="event-date"><br>
+        
+        <label for="amount">Amount</label><br>
+        <input type="number" id="amount" name="amount"><br>
+        
+        <label for="status">Status</label><br>
+        <select id="status" name="status">
+            <option value="">Choose an option</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+        </select><br>
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('main').forEach(main => {
+                main.style.display = 'none';
+            });
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        window.onload = () => {
+            showPage('home');
+        }
+    </script>
+</body>
+</html>
