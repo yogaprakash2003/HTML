@@ -1,0 +1,29 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(102, 183, 236);
+}
+h2{
+    text-align: center;
+}
+form{
+    height: 500px ;
+    padding: 15px;
+    margin-left: 300px;
+    margin-right: 300px;
+    border-radius: 5px;
+}
+label{
+    display: block;
+    margin: 1px;
+}
+select{
+    width: 55%;
+    padding: 4px;
+    border: 1px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+input[type="submit"]{
+    color: blue;
+    background-color: rgb(236, 102, 218);
+}
